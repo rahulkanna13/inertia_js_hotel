@@ -1,0 +1,40 @@
+/* resources/js/components/Header.css */
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: transparent; /* Set background to transparent */
+    color: #b67e0e;
+}
+
+.header .left {
+    display: flex;
+    align-items: center;
+}
+
+.header .left i {
+    margin-right: 10px;
+}
+
+.user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Align text to the start of the container */
+}
+
+.welcome-text {
+    font-size: 14px; /* Adjust font size as needed */
+}
+
+.user-name {
+    font-size: 16px; /* Adjust font size as needed */
+    font-weight: bold;
+    margin-top: 4px; /* Add spacing between the lines */
+}
+
+.usericon{
+    padding: 5%;
+    font-size: 30px;
+}

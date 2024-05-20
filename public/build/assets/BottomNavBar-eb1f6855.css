@@ -1,0 +1,1 @@
+.bottom-nav-bar{position:fixed;bottom:0;left:0;width:100%;background-color:#333;display:flex;justify-content:space-around;align-items:center;padding:10px;color:#fff;z-index:1000}.bottom-nav-bar a{text-decoration:none;color:#fff;display:flex;flex-direction:column;align-items:center}.bottom-nav-bar a span{margin-top:5px}

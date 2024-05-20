@@ -1,0 +1,56 @@
+/* resources/js/components/HotelFinder.css */
+
+.hotel-finder {
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin: 20px 0;
+}
+
+.section-title {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.date-pickers {
+    display: flex;
+    flex-wrap: wrap; /* Allow items to wrap to the next line */
+    margin-bottom: 20px;
+    padding: 0%;
+}
+
+.date-picker {
+    flex: 1;
+    margin-right: 10px;
+    margin-bottom: 10px; /* Add some margin between date pickers */
+}
+
+.date-picker label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.react-datepicker-wrapper,
+.react-datepicker__input-container {
+    width: 100%; /* Make the datepicker input take full width */
+}
+
+.number-of-persons {
+    margin-bottom: 20px;
+}
+
+.number-of-persons label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.search-button {
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+}

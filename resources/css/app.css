@@ -1,0 +1,44 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+h1 {
+    color: red;
+}
+
+.mybtn{
+    margin-top: 100px;
+    color: red;
+    padding: 100px;
+    background-color: brown;
+}
+
+
+
+.featured-hotel-card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    background-color: #ffffff; /* Add your preferred background color */
+  }
+  
+  .featured-hotel-image {
+    width: 100%;
+    height: auto;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+  }
+  
+  .featured-hotel-details {
+    padding: 10px;
+  }
+  
+  .featured-hotel-name {
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+  }
+  
+  .featured-hotel-price {
+    color: #333333; /* Add your preferred text color */
+  }

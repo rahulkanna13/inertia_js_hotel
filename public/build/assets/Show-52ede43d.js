@@ -1,0 +1,1 @@
+import{j as r}from"./app-07aad552.js";const i=({hotel:s})=>r.jsxs("div",{children:[r.jsx("h1",{children:s.name}),r.jsx("p",{children:s.address}),r.jsxs("p",{children:["Price: $",s.price]})]});export{i as default};

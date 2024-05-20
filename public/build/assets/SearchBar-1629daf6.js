@@ -1,0 +1,1 @@
+import{j as a}from"./app-07aad552.js";const s=()=>a.jsxs("div",{className:"search-bar",children:[a.jsx("input",{type:"text",placeholder:"Search...",className:"search-input"}),a.jsx("i",{className:"fas fa-search search-icon"})]}),r=s;export{r as S};

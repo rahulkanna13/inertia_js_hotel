@@ -1,0 +1,1 @@
+import{j as s}from"./app-07aad552.js";const d=({hotels:r})=>s.jsxs("div",{children:[s.jsx("h1",{children:"Hotels"}),s.jsx("ul",{children:r.map(e=>s.jsx("li",{children:s.jsx("a",{href:`/hotels/${e.id}`,children:e.name})},e.id))})]});export{d as default};

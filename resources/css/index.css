@@ -1,0 +1,52 @@
+.app {
+    font-family: sans-serif;
+    text-align: center;
+  }
+  
+  header {
+    margin-top: 50px;
+  }
+  
+  nav {
+    margin-top: 50px;
+    display: flex;
+    justify-content: space-around;
+  }
+  
+  a {
+    color: #000;
+    text-decoration: none;
+  }
+  
+  main {
+    margin-top: 50px;
+  }
+  
+  .hotel-info {
+    margin-bottom: 50px;
+  }
+  
+  .hotel-info h2 {
+    font-size: 30px;
+  }
+  
+  .hotel-info p {
+    font-size: 16px;
+  }
+  
+  .hotel-description {
+    margin-bottom: 50px;
+  }
+  
+  .hotel-description p {
+    font-size: 16px;
+  }
+  
+  .hotel-description a {
+    color: #000;
+    text-decoration: none;
+  }
+  
+  footer {
+    margin-top: 50px;
+  }
