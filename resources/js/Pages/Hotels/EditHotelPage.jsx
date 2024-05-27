@@ -1,56 +1,82 @@
 import React, { useState } from 'react';
 import { Inertia } from '@inertiajs/inertia';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faSave } from '@fortawesome/free-solid-svg-icons';
+import './EditHotelPage.css'; // Import the CSS file
+import { useForm } from '@inertiajs/react';
 
 const EditHotelPage = ({ hotel }) => {
-  const [formData, setFormData] = useState({
+  const { data, setData, put, errors, reset } = useForm({
     name: hotel.name,
     description: hotel.description,
-    // Include other form fields
+    image: null, // New state for the image
   });
+
+
 
   const handleFormSubmit = (e) => {
     e.preventDefault();
+    
+    const formData = new FormData();
+    formData.append('name', data.name);
+    formData.append('description', data.description);
+    if (formData.image) {
+      data.append('image', data.image);
+    }
 
-    Inertia.put(`/update-hotel/${hotel.id}`, formData, {
+    put(route('update-hotel',hotel.id), formData, {
       onSuccess: () => {
-        // Handle success, e.g., show a success message or redirect
         console.log('Hotel updated successfully');
+        reset(); 
       },
       onError: (errors) => {
-        // Handle error, e.g., display validation errors
         console.error('Error updating hotel:', errors);
       },
+      headers: {
+        'Content-Type': 'multipart/form-data',
+      }
     });
   };
 
-  const handleInputChange = (e) => {
-    setFormData({ ...formData, [e.target.name]: e.target.value });
+  const handleInputChange = (event) => {
+    setData('image', event.target.files[0]);
   };
 
   return (
-    <div>
-      <h2>Edit Hotel</h2>
-      <form onSubmit={handleFormSubmit}>
-        <label htmlFor="name">Name:</label>
+    <div className="edit-hotel-container">
+      <h2 className="edit-hotel-heading">Edit Hotel</h2>
+      <form className="edit-hotel-form" onSubmit={handleFormSubmit}>
+        <label className="edit-hotel-label" htmlFor="name">Name:</label>
         <input
+          className="edit-hotel-input"
           type="text"
           id="name"
           name="name"
-          value={formData.name}
+          value={data.name}
           onChange={handleInputChange}
         />
 
-        <label htmlFor="description">Description:</label>
+        <label className="edit-hotel-label" htmlFor="description">Description:</label>
         <textarea
+          className="edit-hotel-textarea"
           id="description"
           name="description"
-          value={formData.description}
+          value={data.description}
           onChange={handleInputChange}
         ></textarea>
 
-        {/* Add more fields as needed */}
-        
-        <button type="submit">Save Changes</button>
+        <label className="edit-hotel-label" htmlFor="image">Image:</label>
+        <input
+          className="edit-hotel-input"
+          type="file"
+          id="image"
+          name="image"
+          onChange={handleInputChange}
+        />
+
+        <button className="edit-hotel-button" type="submit">
+          <FontAwesomeIcon icon={faSave} /> Save Changes
+        </button>
       </form>
     </div>
   );

@@ -1,0 +1,83 @@
+.edit-hotel-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  .edit-hotel-heading {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .edit-hotel-form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .edit-hotel-label {
+    margin-bottom: 10px;
+  }
+  
+  .edit-hotel-input,
+  .edit-hotel-textarea {
+    margin-bottom: 20px;
+    padding: 10px;
+    font-size: 16px;
+  }
+  
+  .image-uploads {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+  
+  .image-upload {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .existing-image {
+    position: relative;
+  }
+  
+  .existing-image img {
+    max-width: 100px;
+    max-height: 100px;
+  }
+  
+  .image-actions {
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    gap: 5px;
+  }
+  
+  .upload-image input {
+    display: none;
+  }
+  
+  .upload-image {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+  }
+  
+  .remove-image {
+    background: none;
+    border: none;
+    cursor: pointer;
+    color: red;
+  }
+  
+  .edit-hotel-button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    align-self: center;
+  }
+  

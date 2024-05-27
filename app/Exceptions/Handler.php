@@ -4,6 +4,8 @@ namespace App\Exceptions;
 
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Throwable;
+use Illuminate\Support\Facades\Log;
+
 
 class Handler extends ExceptionHandler
 {
@@ -27,4 +29,10 @@ class Handler extends ExceptionHandler
             //
         });
     }
+    public function report(Throwable $exception)
+{
+    Log::error($exception);
+    parent::report($exception);
+}
+
 }

@@ -4,21 +4,23 @@ use App\Models\Hotel;
 use Illuminate\Http\Request;
 use App\Models\Image;
 use Inertia\Inertia;
+use Illuminate\Support\Facades\Log;
+use Exception;
+use Illuminate\Support\Facades\Storage;
 
     class HotelController extends Controller
     {
 
         public function index(Request $request)
         {
-            // Query builder for hotels
-            $hotels = Hotel::paginate(10); 
-        
-            // Fetch the paginated results
-         
-        
-            return inertia('Hotels/HotelListPage', [
-                'hotels' => $hotels,
-            ]);
+            // Query builder for hotels with images
+        $hotels = Hotel::with('images')->paginate(10);
+
+        // Fetch the paginated results
+
+        return inertia('Hotels/HotelListPage', [
+            'hotels' => $hotels,
+        ]);
         }
         
 
@@ -41,22 +43,46 @@ use Inertia\Inertia;
 
         public function editHotel($id)
         {
-            $hotel = Hotel::findOrFail($id);
+            $hotel = Hotel::with('images')->findOrFail($id);
             return Inertia::render('Hotels/EditHotelPage', ['hotel' => $hotel]);
         }
 
         
+// public function updateHotel(Request $request, $id)
+// {
+//     $hotel = Hotel::find($id);
+
+//     $request->validate([
+//         'name' => 'required|string|max:255',
+//         'description' => 'nullable|string',
+//         // Add validation rules for other fields
+//     ]);
+
+//     $hotel->update($request->all());
+
+//     return redirect('/manage-hotels')->with('success', 'Hotel updated successfully.');
+// }
+
 public function updateHotel(Request $request, $id)
 {
-    $hotel = Hotel::find($id);
+    dd($request->all());
+    $hotel = Hotel::findOrFail($id);
 
     $request->validate([
         'name' => 'required|string|max:255',
         'description' => 'nullable|string',
-        // Add validation rules for other fields
+        'image' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
     ]);
 
-    $hotel->update($request->all());
+    $hotel->update($request->only('name', 'description'));
+
+    if ($request->hasFile('image')) {
+        $imagePath = $request->file('image')->store('hotel_images', 'public');
+        Image::create([
+            'hotel_id' => $hotel->id,
+            'image_path' => $imagePath,
+        ]);
+    }
 
     return redirect('/manage-hotels')->with('success', 'Hotel updated successfully.');
 }

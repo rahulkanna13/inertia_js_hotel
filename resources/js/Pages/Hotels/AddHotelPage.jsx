@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { Inertia } from '@inertiajs/inertia';
+import GuestLayout from '@/Layouts/GuestLayout';
+import './AddHotelPage.css';
 
 const AddHotelPage = () => {
   const [formData, setFormData] = useState({
@@ -28,31 +30,44 @@ const AddHotelPage = () => {
   };
 
   return (
-    <div>
-      <h2>Add Hotel</h2>
-      <form onSubmit={handleFormSubmit}>
-        <label htmlFor="name">Name:</label>
-        <input
-          type="text"
-          id="name"
-          name="name"
-          value={formData.name}
-          onChange={handleInputChange}
-        />
+    <GuestLayout>
+      <div className="container">
+        <div className="card">
+          <h2>Add Hotel</h2>
+          <form onSubmit={handleFormSubmit}>
+            <div className="input-group">
+              <label htmlFor="name" className="input-label">Name:</label>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                value={formData.name}
+                onChange={handleInputChange}
+                className="input-field"
+                required
+              />
+            </div>
 
-        <label htmlFor="description">Description:</label>
-        <textarea
-          id="description"
-          name="description"
-          value={formData.description}
-          onChange={handleInputChange}
-        ></textarea>
+            <div className="input-group">
+              <label htmlFor="description" className="input-label">Description:</label>
+              <textarea
+                id="description"
+                name="description"
+                value={formData.description}
+                onChange={handleInputChange}
+                className="input-field"
+                rows="4"
+                required
+              ></textarea>
+            </div>
 
-        {/* Add more fields as needed */}
-        
-        <button type="submit">Add Hotel</button>
-      </form>
-    </div>
+            {/* Add more fields as needed */}
+            
+            <button type="submit" className="btn-submit">Add Hotel</button>
+          </form>
+        </div>
+      </div>
+    </GuestLayout>
   );
 };
 

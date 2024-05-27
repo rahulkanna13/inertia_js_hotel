@@ -86,6 +86,7 @@ Route::get('/hotels/{id}', [HotelController::class, 'show']);
 Route::post('/hotels/{id}/book', [HotelController::class, 'book']);
 Route::get('/manage-hotels', [HotelController::class, 'showManageHotels'])->name('manage-hotels');
 Route::get('/edit-hotel/{id}', [HotelController::class, 'editHotel'])->name('edit-hotel');
+// Route::put('/update-hotel/{id}', [HotelController::class, 'updateHotel'])->name('update-hotel');
 Route::put('/update-hotel/{id}', [HotelController::class, 'updateHotel'])->name('update-hotel');
 Route::delete('/delete-hotel/{id}', [HotelController::class, 'deleteHotel'])->name('delete-hotel');
 // routes/web.php

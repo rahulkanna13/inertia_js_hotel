@@ -1,0 +1,40 @@
+/* resources/js/pages/ManageHotels/ManageHotelsPage.css */
+
+.manage-hotels {
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .manage-hotels h1 {
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
+  .btn-add {
+    display: block;
+    margin: 0 auto 20px auto;
+    padding: 10px 20px;
+    background-color: #4CAF50;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    border-radius: 5px;
+  }
+  
+  .hotel-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+  
+  @media (max-width: 768px) {
+    .hotel-list {
+      flex-direction: column;
+    }
+  
+    .btn-add {
+      width: 100%;
+    }
+  }
+  
